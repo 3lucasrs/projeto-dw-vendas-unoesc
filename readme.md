@@ -90,7 +90,7 @@ Siga os passos abaixo para configurar o ambiente e executar o projeto em uma má
     Abra um terminal e clone o projeto do GitHub:
 
     ```bash
-    git clone [https://github.com/3lucasrs/projeto-dw-vendas-unoesc.git](https://github.com/3lucasrs/projeto-dw-vendas-unoesc.git)
+    git clone (https://github.com/3lucasrs/projeto-dw-vendas-unoesc.git)
     cd projeto-dw-vendas-unoesc
     ```
 
