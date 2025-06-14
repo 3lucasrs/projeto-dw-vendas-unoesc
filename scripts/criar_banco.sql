@@ -1,4 +1,4 @@
--- PARA TESTE
+-- Criar as tabelas no db dw_vendas
 DROP TABLE IF EXISTS fatovendas;
 
 DROP TABLE IF EXISTS dimtempo;
@@ -57,4 +57,4 @@ CREATE TABLE
   );
 
 SELECT
-  'Tabelas do Data Warehouse recriadas!' as status;
+  'Tabelas do Data Warehouse criadas!' as status;
