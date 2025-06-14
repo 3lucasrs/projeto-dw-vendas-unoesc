@@ -71,3 +71,61 @@ A análise calculou o total de vendas por categoria de produto, fornecendo um in
 | **Office Supplies** | R$ 705.422,28   |
 
 Essa análise simples, porém poderosa, demonstra o valor do Data Warehouse ao permitir que perguntas de negócio sejam respondidas de forma rápida e precisa.
+
+---
+
+## 6. Como Executar o Projeto
+
+Siga os passos abaixo para configurar o ambiente e executar o projeto em uma máquina nova.
+
+### Pré-requisitos
+
+- **Python 3.x:** [Download](https://www.python.org/downloads/) (Lembre-se de marcar **"Add Python to PATH"** durante a instalação).
+- **PostgreSQL:** [Download](https://www.postgresql.org/download/)
+- **DBeaver (ou outra ferramenta de BD):** [Download](https://dbeaver.io/download/)
+
+### Passos para Execução
+
+1.  **Clonar o Repositório**
+    Abra um terminal e clone o projeto do GitHub:
+
+    ```bash
+    git clone [https://github.com/3lucasrs/projeto-dw-vendas-unoesc.git](https://github.com/3lucasrs/projeto-dw-vendas-unoesc.git)
+    cd projeto-dw-vendas-unoesc
+    ```
+
+2.  **Instalar Bibliotecas Python**
+    No terminal, dentro da pasta do projeto, instale as dependências:
+
+    ```bash
+    pip install pandas sqlalchemy psycopg2-binary scikit-learn
+    ```
+
+3.  **Configurar o Banco de Dados**
+
+    - Abra o DBeaver e conecte-se ao seu servidor PostgreSQL (use o banco de dados padrão `postgres` para a conexão inicial).
+    - Execute o seguinte comando SQL para criar o banco de dados do projeto:
+      ```sql
+      CREATE DATABASE dw_vendas;
+      ```
+    - **Importante:** Desconecte e reconecte ao servidor, mas desta vez, selecione `dw_vendas` como o banco de dados.
+    - Com a conexão ativa no `dw_vendas`, abra e execute o script `scripts/criar_banco.sql` para criar todas as tabelas.
+
+4.  **Executar o Processo de ETL**
+
+    - Abra o arquivo `scripts/processo_etl.py` em um editor de texto.
+    - Na linha `db_password = 'root'`, substitua `'root'` pela senha que você configurou para o seu PostgreSQL.
+    - No terminal, execute o script:
+      ```bash
+      python scripts/processo_etl.py
+      ```
+    - Aguarde a execução ser concluída.
+
+5.  **Executar a Análise Estatística**
+    - Abra o arquivo `scripts/modelo_estatistico.py`.
+    - Altere a senha na linha `db_password = 'root'` para a sua senha do PostgreSQL.
+    - No terminal, execute o script:
+      ```bash
+      python scripts/modelo_estatistico.py
+      ```
+    - O resultado da análise de vendas por categoria será exibido no terminal.
